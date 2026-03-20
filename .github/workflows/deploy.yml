@@ -20,12 +20,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           package-manager-cache: false
 
       - name: Install dependencies
@@ -34,8 +34,11 @@ jobs:
       - name: Build Slidev
         run: npx slidev build --base /my-slidev/
 
+      - name: Copy 404 fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
