@@ -15,6 +15,8 @@ const files = readdirSync(slidesDir)
   .filter(name => name.endsWith('.md'))
   .filter(name => !name.startsWith('_'))
 
+console.log('Slides found:', files)
+
 for (const file of files) {
   const name = path.basename(file, '.md')
   const entry = `${slidesDir}/${file}`
