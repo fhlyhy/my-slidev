@@ -7,6 +7,6 @@
     "export": "slidev export"
   },
   "devDependencies": {
-    "@slidev/cli": "^0.52.0"
+    "@slidev/cli": "latest"
   }
 }
