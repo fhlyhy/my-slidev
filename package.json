@@ -1,0 +1,12 @@
+{
+  "name": "my-slidev",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^0.52.0"
+  }
+}
