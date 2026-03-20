@@ -22,16 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show files
-        run: |
-          pwd
-          ls
-          ls slides
-          ls slides/_partials || true
-          ls layouts || true
-          ls components || true
-          ls styles || true
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -42,9 +32,6 @@ jobs:
 
       - name: Build Slidev
         run: npx slidev build slides/sort.md --base /${{ github.event.repository.name }}/
-
-      - name: Show dist
-        run: ls dist
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
