@@ -31,12 +31,13 @@ jobs:
           node scripts/build-all.mjs
           node scripts/homepage.mjs
 
-      - name: Check site
+      - name: Check files
         run: |
           pwd
-          ls -la
-          ls -la site
-          find site -maxdepth 2 -type f | sort
+          echo "---- slides ----"
+          find slides -maxdepth 2 -type f | sort
+          echo "---- site ----"
+          find site -maxdepth 3 -type f | sort
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
