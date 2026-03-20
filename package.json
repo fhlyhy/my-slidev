@@ -1,5 +1,5 @@
 {
-  "name": "my-slidev",
+  "name": "slidev-sort",
   "private": true,
   "scripts": {
     "dev": "slidev",
@@ -7,7 +7,9 @@
     "export": "slidev export"
   },
   "devDependencies": {
-    "@slidev/cli": "latest",
-    "@slidev/theme-default": "latest"
+    "@slidev/cli": "^52.11.2"
+  },
+  "dependencies": {
+    "@slidev/theme-default": "^0.25.0"
   }
 }
