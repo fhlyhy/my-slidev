@@ -27,7 +27,9 @@ jobs:
         run: npm install
 
       - name: Build all slides
-        run: node scripts/build-all.mjs
+        run: |
+          node scripts/build-all.mjs
+          node scripts/homepage.mjs
 
       - name: Check site
         run: |
