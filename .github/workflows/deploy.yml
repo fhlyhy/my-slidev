@@ -31,13 +31,15 @@ jobs:
         run: npm install
 
       - name: Build Slidev
-        run: npx slidev build slides/sort.md --base /${{ github.event.repository.name }}/ --out dist
+        run: |
+          rm -rf ./site
+          npx slidev build ./slides/sort.md --base /${{ github.event.repository.name }}/ --out ./site
 
-      - name: Check dist
+      - name: Check output
         run: |
           pwd
           ls -la
-          ls -la dist
+          ls -la ./site
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -45,7 +47,7 @@ jobs:
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./site
 
   deploy:
     needs: build
